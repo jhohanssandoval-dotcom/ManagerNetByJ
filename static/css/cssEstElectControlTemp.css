@@ -1,0 +1,291 @@
+body{
+  background-image: url("fondoRed.png");
+}
+.etiqueta{
+  color: #ffffff;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#graficaTemp{/*grafica*/
+    margin: 0 auto;
+    max-width: 700px;
+    display: block;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.controlTemp {
+  display: flex;                  /* Activar Flexbox */
+  justify-content: center;        /* Espacio entre los hijos */
+  align-items: flex-start;        /* Alinear arriba si hay alturas distintas */
+  gap: 200px;                      /* Espacio fijo entre los divs (opcional) */
+  padding: 20px; 
+  background-color: #034334;                 /* Espacio interior del contenedor */
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.contenedorMain{
+  display: flex;
+  background: #57df9b; /* Azul degradado */
+  height: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+/*Titulo principal*/
+.tituloMain{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 1px;
+}
+/*icono de titulo*/
+.imagenIconMain{
+  border-radius: 13px;
+}
+
+.subtitulo{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  color: white;
+  padding: 10px 20px;
+  background: #57df9b;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.opciones {/*opciones que se ocultan y salen*/
+      margin-top: 20px;
+      display: none; /* Oculta por defecto */
+}
+
+/*BOTONES Y RADIOS DE LOS BOTONES*/
+.radios{
+  appearance: none;/*elimina el estilo predeterminado*/
+  -webkit-appearance: none;/*para que se pueda usar con cualquier navegador*/
+  width: 30px; /*ancho*/
+  height: 30px;/*alto*/
+  border: 2px solid #007bff;/*borde de 2px de grosor y de color azul*/
+  border-radius: 50%;/*redondea*/
+  background-color: rgb(225, 232, 237);/*fondo de cuando esta sin seleccionar*/
+  display: inline-block;/*se comporte como un bloque que se puede alinear horizontalmente con otros elementos*/
+  position: relative;
+  cursor: pointer;/*hace que el cursor cambie a mano*/
+  vertical-align: middle;
+  margin-right: 8px;
+  transition: all 0.5 ease-in-out; /*suaviza las trasiciones*/
+}
+.radios:checked{/*cuando esta seleccionado*/
+  background-color: #007bff;/*pone un circulo de color azul*/
+  box-shadow: inset 0 0 0 5px white;/*dibuja un circulo blanco interno*/
+}
+.SetPoint {
+  width: 300px;                    /* O puedes usar un valor fijo como 300px */
+  padding: 10px 16px;             /* Espaciado interno */
+  font-size: 16px;                /* Tamaño de texto legible */
+  border: 2px solid #ccc;         /* Borde gris claro */
+  border-radius: 8px;             /* Bordes redondeados */
+  outline: none;                  /* Quita borde azul predeterminado al enfocar */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;         /* Incluye padding en el ancho */
+}
+.SetPoint:focus {
+  border-color: #007bff;          /* Borde azul al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Sombra suave al enfocar */
+}
+
+/*bontones on off*/
+.boton{
+  background-color: red;       /* Azul profesional */
+  color: white;                    /* Texto blanco */
+  border: none;                    /* Sin borde */
+  padding: 12px 24px;              /* Espaciado interno */
+  border-radius: 8px;              /* Bordes redondeados */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: 600;                /* Texto seminegrita */
+  cursor: pointer;                 /* Mano al pasar */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.boton:hover {
+  transform: translateY(-2px);     /* Levanta un poco el botón */
+}
+.boton:active {
+  transform: translateY(1px);      /* Pulsa ligeramente hacia abajo */
+}
+.encendido{
+  background-color: #28a745;
+  color: white;
+}
+.apagado{
+  background-color: #dc3545;
+  color: white;
+}
+
+/*control Electrico*/
+.controlElectrico{
+  display: flex;
+  justify-content: center;        /* Espacio entre los hijos */
+  align-items: flex-start;        /* Alinear arriba si hay alturas distintas */
+  gap: 200px;                     /* Espacio fijo entre los divs (opcional) */
+  padding: 20px;
+  background-color: #034334;                 /* Espacio interior del contenedor */
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+
+/*boton normal*/
+.bottonNormal{
+  background-color: #28a745;       /* Azul profesional */
+  color: white;                    /* Texto blanco */
+  border: none;                    /* Sin borde */
+  padding: 12px 24px;              /* Espaciado interno */
+  border-radius: 8px;              /* Bordes redondeados */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: 600;                /* Texto seminegrita */
+  cursor: pointer;                 /* Mano al pasar */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.bottonNormal:hover {
+  transform: translateY(-2px);     /* Levanta un poco el botón */
+}
+.bottonNormal:active {
+  transform: translateY(1px);      /* Pulsa ligeramente hacia abajo */
+}
+
+/*Pie de pagina*/
+.piePagina {
+    border-radius: 10px ;
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2930 100%);
+    color: #ecf0f1;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+}
+.piePagina form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.piePagina label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+.piePagina input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.piePagina input[type="checkbox"]:checked {
+    background-color: #3498db;
+}
+
+.piePagina input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.piePagina button {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.piePagina label:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.piePagina button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(to right, #2980b9, #27ae60);
+}
+.piePagina button:active {
+    transform: translateY(0);
+}
+/*imganes*/
+.img-responsive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    width: 263px;
+    height: 202px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/*switch*/
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 26px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px; width: 22px;
+      left: 2px; bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
