@@ -1,0 +1,60 @@
+body{
+  background-image: url("fondoRed.png");
+}
+.encabezadoMain{
+    display: flex;
+    justify-content: center;
+}
+.conjuntoBrandTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #041C2C;
+    width: 1000px;
+    border-radius: 100px;
+}
+.brandImg{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+.titulo{
+    font-size: 50px;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/**/
+.fila{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 50px;
+}
+.imagen{
+    height: 100px;
+    width: 100px;
+    border-radius: 30px;
+}
+.tarjeta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #041C2C;
+    border-radius: 100px;
+    height: 150px;
+    width: 450px;
+}
+.link{
+    color: aliceblue;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+.link:hover{
+    font-size: 25px;
+    color: aqua;
+}
