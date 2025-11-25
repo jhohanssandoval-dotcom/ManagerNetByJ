@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estado-equipo</title>
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="/static/css/cssEstadoEquipo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-gauges/gauge.min.js"></script>
+    <script src="/static/js/jsEstadoEquipo.js"></script>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="/shell-automation">SHELL AUTOMATION</a></li>
+        <li><a href="/control-temperatura">ESTADO ELECT Y TEMP</a></li>
+        <li><a href="/estado-red">ESTADO RED</a></li>
+        <li><a href="/estado-puertos">ESTADO PUERTOS DEVICE</a></li>
+        <li><a href="/estado-equipo">ESTADO EQUIPO</a></li>
+        <li><a href="/tablas">TABLAS</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="contenedorMain">
+            <h1 class="tituloMain">ESTADO DEL EQUIPO</h1>
+            <img src="/static/img/shellAutomationTres.png" height="60px" width='60px' class="imagenIconMain">
+        </div>
+
+        <div class="contenedorInTextsButton">
+            <div>
+                <h2 class="subtitulo">PARÁMETROS SNMP DEL DISPOSITIVO</h2>
+                <label class="switch">
+                    <input type="checkbox" id="myswitch">
+                    <span class="slider"></span>
+                </label>
+            </div><br>
+            <div class="contenedorInTexts">
+                <input type="text" placeholder="Ingresar IP de gestion" id="IPgestion" class="cajatext">
+                <input type="text" placeholder="SNMP COMMUNITY" id="SNMP_COMMUNITY" class="cajatext">
+                <input type="text" placeholder="SNMP_AUTH_KEY" id="SNMP_AUTH_KEY" class="cajatext">
+                <input type="text" placeholder="SNMP_ENCRIP_KEY" id="SNMP_ENCRIP_KEY" class="cajatext">
+            </div>
+        </div>
+        <div class="sistemaGraficas"><!--Estos 2 estaran en una sola fila-->
+            <div class="sistema">
+                <h2 class="subtitulo">INFORMACIÓN GENERAL DEL SISTEMA</h2>
+                <div class="info-cards">
+                    <div class="card">
+                        <div class="cardIcon">
+                            <img src="/static/img/descripcion.gif" height="60px" width='60px'>
+                        </div>
+                        <div class="cardContent">
+                            <h3 class="card-title">MODELO</h3>
+                            <p id="sysDescr" class="card-value">–</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardIcon">
+                            <img src="/static/img/hostname.gif" height="60px" width='60px'>
+                        </div>
+                        <div class="cardContent">
+                            <h3 class="card-title">Hostname</h3>
+                            <p id="sysName" class="card-value">-</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardIcon">
+                            <img src="/static/img/uptime.gif" height="60px" width='60px'>
+                        </div>
+                        <div class="cardContent">
+                            <h3 class="card-title">Uptime</h3>
+                            <p id="sysUpTime" class="card-value">–</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardIcon">
+                            <img src="/static/img/cpu.gif" height="60px" width='60px'>
+                        </div>
+                        <div class="cardContent">
+                            <h3 class="card-title">FRECUENCIA</h3>
+                            <p id="sysFrec" class="card-value">–</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="CPU"> 
+                <h2 class="subtitulo">CPU</h2>
+                <div class="chart-box">
+                    <canvas id="cpuSparkline"></canvas>
+                </div>
+            </div>
+            <div class="MEMORIA">
+                <h2 class="subtitulo">MEMORIA</h2>
+                <div class="gauge-container">
+                    <canvas id="memGauge"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="tableInterfaces">
+            <h2 class="subtitulo">INTERFACES</h2>
+            <div class="tabla">
+                <table id="contenedorPuertos" class="contenedorPuertos">
+                    <thead>
+                        <tr>
+                            <th>INTERFAZ</th>
+                            <th>ESTADO</th>
+                            <th>CONECTADO</th>
+                            <th>In(BYTES)</th>
+                            <th>Out(BYTES)</th>
+                            <th>Rx ERRORS(PACKETS)</th>
+                            <th>Tx ERRORS(PACKETS)</th>
+                            <th>Rx DROPS(PACKETS)</th>
+                            <th>Tx DROPS(PACKETS)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
