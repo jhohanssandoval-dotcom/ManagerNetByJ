@@ -1,0 +1,29 @@
+/*este menu es general y tiene que estar en todos los html*/
+.menu {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    background: #034334;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* importante para que no baje de línea */
+    overflow-x: auto;   /* opcional: scroll horizontal si se pasa del ancho */
+    width: 100%;
+    max-width: 100%;
+}
+.menu li {
+    flex: 0 0 auto;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+}
+.menu li a:hover{
+    background: #ef8354;
+}
+
+
