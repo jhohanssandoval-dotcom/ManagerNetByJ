@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estado-puertos</title>
+    <link rel="stylesheet" href="/static/css/cssEstadoPortDevice.css">
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <script src="/static/js/jsEstadoPortDevice.js" defer></script>
+
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="/shell-automation">SHELL AUTOMATION</a></li>
+        <li><a href="/control-temperatura">ESTADO ELECT Y TEMP</a></li>
+        <li><a href="/estado-red">ESTADO RED</a></li>
+        <li><a href="/estado-puertos">ESTADO PUERTOS DEVICE</a></li>
+        <li><a href="/estado-equipo">ESTADO EQUIPO</a></li>
+        <li><a href="/tablas">TABLAS</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!--titulo principal-->
+        <div class="contenedorMain">
+            <h1 class="tituloMain">ESTADO DE LOS PUERTOS</h1>
+            <img src="/static/img/estadoPuertosMain.png" height="60px" width='60px' class="imagenIconMain">
+        </div>
+        <section class="parametros">
+            <h4 class="subtitulo">PARAMETROS DE DISPOSITIVO PARA CONEXION SSH</h4><br>
+            <div class="contenedorParametros">
+                    <select id="brand" name="eleccion" class="selector">
+                        <option value="cisco">cisco</option>
+                        <option value="mikrotik">mikrotik</option>
+                    </select>
+                    <input type="text" placeholder="Ingresar IP de gestion" id="IPgestion" class="cajatext">
+                    <input type="text" placeholder="Ingresar Usuario" id="user" class="cajatext">
+                    <input type="text" placeholder="Ingresar Contraseña" id="password" class="cajatext">
+                    <button class="send" id="sendParameters">VERIFICAR</button>
+                
+            </div>
+        </section>
+
+        <!--Seccion de levantar y bajar puertos-->
+        <section class="upDownPorts">
+            <div class="subtituloUpDown">
+                <h4 class="subtitulo">UP PUERTOS</h4>
+                <h4 class="subtitulo">DOWN PUERTOS</h4>
+            </div>
+            <div class="formsSendPorts">
+                    <input type="text" placeholder="Ingresar Puertos" id="puertosToUp" class="cajatext">
+                    <button class="send" id="sendPuertosUp">UP</button>
+                    <input type="text" placeholder="Ingresar Puertos" id="puertosToDown" class="cajatext">
+                    <button class="send" id="sendPuertosDown">DOWN</button>
+            </div>
+        </section>
+        
+        <!--Seccion de ver estado puertos-->
+        <section class="estadoPuertos">
+            <h4 class="subtitulo">ESTADO PUERTOS</h4><br>
+            <table id="contenedorPuertos" class="contenedorPuertos">
+                <thead>
+                    <tr>
+                        <th>INTERFAZ</th>
+                        <th>IP</th>
+                        <th>ESTADO OPERATIVO</th>
+                        <th>ESTADO ADMINISTRATIVO</th>
+                        <th>MAC APRENDIDA</th>
+                        <th>IP DEVICE</th>
+                        <th>VELOCIDAD</th>
+                        <th>DUPLEX</th>
+                        <th>VLAN</th>
+                        <th>TIPO DE CONEXION</th>
+                        <th>Rx PACKETS</th>
+                        <th>Tx PACKETS</th>
+                        <th>Rx ERRORS</th>
+                        <th>Tx ERRORS</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+    <footer class="piePagina">
+        <input type="checkbox" id="alarmUp" name="alarmUp"><label>Enviar alarmas cuando se levantan Puertos</label><br>
+        <input type="checkbox" id="alarmDown" name="alarmDown"><label>Enviar alarmas cuando se inhabilitan Puertos</label><br>
+    </footer>
+</body>
+</html>

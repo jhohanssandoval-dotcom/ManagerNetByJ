@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shell-automation</title>
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="/static/css/cssShellAutomation.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="/shell-automation">SHELL AUTOMATION</a></li>
+        <li><a href="/control-temperatura">ESTADO ELECT Y TEMP</a></li>
+        <li><a href="/estado-red">ESTADO RED</a></li>
+        <li><a href="/estado-puertos">ESTADO PUERTOS DEVICE</a></li>
+        <li><a href="/estado-equipo">ESTADO EQUIPO</a></li>
+        <li><a href="/tablas">TABLAS</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="contenedorMain">
+            <h1 class="tituloMain">GUI DE AUTOMATIZACIÓN</h1>
+            <img src="/static/img/shellAutomationTres.png" height="60px" width='60px' class="imagenIconMain">
+        </div>
+        
+        <div class="contenedorBackupsSelect">
+            <div class="selectBrand">
+                <h2 class="subtitulo">SELECCIÓN DE MARCA</h2><br>
+                <select id="tipoEquipo" class="selector">
+                    <option value="">-- Seleccionar --</option>
+                    <option value="cisco">Cisco</option>
+                    <option value="mikrotik">Mikrotik</option>
+                </select>
+            </div>
+            <div class="contenedorScripts">
+                <h2 class="subtitulo">SCRIPTS DISPONIBLES</h2><br>
+                <div id="contenedorBackups">
+                
+                </div>
+            </div>
+            
+        </div>
+        <div class="PARAMETROS">
+            <h2 class="subtitulo">PARÁMETROS DE EQUIPO PARA CONEXIÓN</h2><br>
+            <input type="text" placeholder="Ingresar IP de gestion" id="IPgestion" class="cajatext">
+            <input type="text" placeholder="Ingresar Usuario" id="user" class="cajatext">
+            <input type="text" placeholder="Ingresar Contraseña" id="password" class="cajatext">
+            <button class="send" id="cargarParametros">CARGAR PARAMETROS</button>
+            <button class="send" id="borrarParametros">BORRAR</button>
+            <div id="contenedorDispositivos">
+                <!--contenedoro donde se muestra el conenido del txt IpUserPassword-->
+            </div>
+        </div>
+        <div class="PROGRAMACION">
+            <h2 class="subtitulo">PROGRAMACIÓN DE CONFIGURACIONES</h2><br>
+            <input type="time" name="horaConfiguración" id="horaConfiguración">
+            <input type="date" name="dateConfig" id="dateConfig">
+            <input type="text" placeholder="Ingresar File's Name..." class="cajatext" id="fileName">
+            <button class="send" id="cargarCofig">CARGAR CONFIGURACIÓN</button>
+        </div>
+    </main>
+
+    <footer class="piePagina">
+        <input type="checkbox" id="alarmCofig" name="alarmCofig"><label>Enviar alarmas cuando realiza CONFIGURACIÓN DE EQUIPOS</label><br>
+    </footer>
+    <script src="/static/js/jsShellAutomation.js"></script>
+</body>
+</html>

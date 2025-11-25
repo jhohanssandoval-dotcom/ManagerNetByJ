@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>control-temperatura</title>
+  <!-- SIN rutas absolutas de Windows -->
+  <link rel="stylesheet" href="/static/css/cssEstElectControlTemp.css">
+  <link rel="stylesheet" href="/static/css/menu.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/js/jsEstElectControlTemp.js" defer></script>
+
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="/shell-automation">SHELL AUTOMATION</a></li>
+        <li><a href="/control-temperatura">ESTADO ELECT Y TEMP</a></li>
+        <li><a href="/estado-red">ESTADO RED</a></li>
+        <li><a href="/estado-puertos">ESTADO PUERTOS DEVICE</a></li>
+        <li><a href="/estado-equipo">ESTADO EQUIPO</a></li>
+        <li><a href="/tablas">TABLAS</a></li>
+        </ul>
+    </nav>
+
+  <main>
+        <div class="contenedorMain">
+            <h1 class="tituloMain">CONTROL ELÉCTRICO Y DE TEMPERATURA</h1>
+            <img src="/static/img/tempElectMain.png" height="60px" width='60px' class="imagenIconMain">
+        </div>
+
+        <section>
+          <h3 class="subtitulo">CONTROL DE TEMPERATURA</h3><br>
+          
+          <div class="controlTemp">
+              <div>
+                  <h4 class="subtitulo">TEMPERATURA DE AMBIENTE</h4>
+                  <label class="switch">
+                    <input type="checkbox" id="myswitch">
+                    <span class="slider"></span>
+                  </label>
+                  <canvas id="graficaTemp" height="300px" width="450px"></canvas>
+              </div>
+              <div>
+                    <h4 class="subtitulo">SELECCIÓN DE MODO DE CONTROL</h4><br>
+                    <label class="etiqueta">
+                      <input type="radio" class="radios" name="opcion" value="uno" onclick="mostrarOpciones()"> MANUAL
+                    </label>
+                    <br>
+                    <label class="etiqueta">
+                      <input type="radio" class="radios" name="opcion" value="dos" onclick="mostrarOpciones()"> AUTOMÁTICO
+                    </label>
+                    <!-- Contenedor para la opción 1 -->
+                    <div id="opcion1" class="opciones">
+                      <button type="button" id="botonOpUno" class="boton">ENCENDER</button>
+                    </div>
+                    <!-- Contenedor para la opción 2 -->
+                    <div id="opcion2" class="opciones">
+                      <button id="botonOpDos" class="bottonNormal">INICIAR</button><br><br>
+                      <input type="text" placeholder="Ingresar SetPoint..." id="SetPoint" class="SetPoint">
+                    </div>   
+              </div>
+          </div>
+        </section>
+      <!--control electrico-->
+        <section>
+          <h3 class="subtitulo">CONTROL ELÉCTRICO</h3>
+          <div class="controlElectrico">
+            <div>
+              <h4 class="subtitulo">LINEA PRINCIPAL</h4><br>
+              <div class="imagen-dinamica">
+                <img id="imagenEstadoLPrincipal" src="/static/img/estadoOn.png" alt="Estado del sistema principal" class="img-responsive">
+              </div>
+              <button type="button" id="activarLineaUno" class="bottonNormal">ACTIVAR LINEA PRINCIPAL</button>
+            </div>
+            <div>
+              <h4 class="subtitulo">LINEA SECUNDARIA</h4>
+              <div class="imagen-dinamica">
+                <img id="imagenEstadoLSecundario" src="/static/img/estadoOn.png" alt="Estado del sistema secundario" class="img-responsive">
+              </div>
+              <button type="button" id="activarLineaDos" class="bottonNormal">ACTIVAR LINEA SECUNDARIA</button>
+            </div>
+          </div>     
+        </section>
+  </main>
+
+  <footer class="piePagina">
+    <!-- Alarmas o controles -->
+    <input type="checkbox" id="SPsuperado" name="SPsuperado"><label>Enviar alarmas cuando Temperatura supere:</label>
+    <input type="text" placeholder="Ingresar SetPoint..." id="SetPointAlarma" class="SetPoint"><br>
+    <input type="checkbox" id="offMainLine" name="offMainLine"><label>Enviar alarmas cuando no hay alimentación de linea Principal.</label><br>
+    <input type="checkbox" id="offSecondLine" name="offSecondLine"><label>Enviar alarmas cuando no hay alimentación de linea Secundaria.</label><br>
+  </footer>
+
+</body>
+</html>
+  

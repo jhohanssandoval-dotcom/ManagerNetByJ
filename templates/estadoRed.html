@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estado-Red</title>
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="/static/css/cssEstadoRed.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="/shell-automation">SHELL AUTOMATION</a></li>
+        <li><a href="/control-temperatura">ESTADO ELECT Y TEMP</a></li>
+        <li><a href="/estado-red">ESTADO RED</a></li>
+        <li><a href="/estado-puertos">ESTADO PUERTOS DEVICE</a></li>
+        <li><a href="/estado-equipo">ESTADO EQUIPO</a></li>
+        <li><a href="/tablas">TABLAS</a></li>
+        </ul>
+    </nav>
+    <div class="contenedorMain">
+        <h1 class="tituloMain">ESTADO DE RED</h1>
+        <img src="/static/img/estadoRedMain.png" height="60px" width='60px' class="imagenIconMain">
+    </div>
+    <div class="ip_devices">
+        <input type="text" placeholder="Ingresar IP Device 1..." id="IP_uno" class="IP">
+        <input type="text" placeholder="Ingresar IP Device 2..." id="IP_dos" class="IP">
+        <input type="text" placeholder="Ingresar IP Device 3..." id="IP_tres" class="IP">
+        <input type="text" placeholder="Ingresar IP Device 4..." id="IP_cuatro" class="IP">
+        <input type="text" placeholder="Ingresar IP Device 5..." id="IP_cinco" class="IP">
+    </div>
+    <div class="dashboard">
+        <h2 class="secondTitle">Monitor de Red</h2>  
+        <div class="grid-container">
+            <div id="network-graph" class="graph-container">
+                <!--contiene el grafico de red-->
+            </div>
+            <div class="metrics-panel">
+                <!--contiene el grafico de latencia y estado de equipos-->
+                <h2 class="secondTitle">Párametros de Equipos</h2>
+                <div id="live-metrics" class="metrics-container">
+                    <!-- datos de equipos-->
+                </div>
+                <div class="chart-container">
+                    <!--contenedor de grafico de latencia-->
+                    <canvas id="latency-chart"></canvas>
+                </div>
+
+            </div>
+        </div>
+        <div class="legend">
+            <div class="legend-item">
+                <span class="status-dot online"></span> OPERATIVO
+            </div>
+            <div class="legend-item">
+                <span class="status-dot offline"></span> INACTIVO
+            </div>
+            <div class="legend-item">
+                <span class="status-dot high-latency"></span> LATENCIA ALTA
+            </div>
+            <div class="legend-item">
+                <span class="status-dot packet-loss"></span> PÉRDIDA DE PACKETES
+            </div>
+        </div>
+    </div>
+
+    <footer class="piePagina">
+        <input type="checkbox" id="alarmoffline" name="alarmoffline"><label>Enviar alarmas cuando DEVICES offline</label><br>
+        <input type="checkbox" id="alarmhigh_latency" name="alarmhigh_latency"><label>Enviar alarmas cuando DEVICES high-latency</label><br>
+        <input type="checkbox" id="alarmpacket_loss" name="alarmpacket_loss"><label>Enviar alarmas cuando DEVICES packet-loss</label><br>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.2/dist/vis-network.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"></script>
+    <script src="/static/js/jsEstadoRed.js"></script>
+</body>
+</html>
