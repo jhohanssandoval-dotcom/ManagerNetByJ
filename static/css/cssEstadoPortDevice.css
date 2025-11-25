@@ -1,0 +1,226 @@
+body{
+  background-image: url("fondoRed.png");
+}
+/*Titulo Principal*/
+.contenedorMain{
+  display: flex;
+  background: #57df9b; /* Azul degradado */
+  height: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+/*Titulo principal*/
+.tituloMain{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 1px;
+}
+/*icono de titulo*/
+.imagenIconMain{
+  border-radius: 13px;
+}
+
+/*subtitulos*/
+.subtitulo{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  color: white;
+  padding: 10px 20px;
+  background: #57df9b;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/*pie de pagina*/
+.piePagina {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2930 100%);
+    color: #ecf0f1;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+.piePagina label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+.piePagina input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.piePagina input[type="checkbox"]:checked {
+    background-color: #3498db;
+}
+.piePagina input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.piePagina label:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.contenedorParametros{
+    text-align: center;
+}
+
+/*Caja de  ingreso de texto*/
+.cajatext{
+  width: 300px;                    /* O puedes usar un valor fijo como 300px */
+  padding: 10px 16px;             /* Espaciado interno */
+  font-size: 16px;                /* Tamaño de texto legible */
+  border: 2px solid #ccc;         /* Borde gris claro */
+  border-radius: 8px;             /* Bordes redondeados */
+  outline: none;                  /* Quita borde azul predeterminado al enfocar */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;         /* Incluye padding en el ancho */
+}
+.cajatext:focus {
+  border-color: #007bff;          /* Borde azul al enfocar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Sombra suave al enfocar */
+}
+
+/*boton de envio de parametros*/
+.send{
+  background-color: #28a745;       /* Azul profesional */
+  color: white;                    /* Texto blanco */
+  border: none;                    /* Sin borde */
+  padding: 12px 24px;              /* Espaciado interno */
+  border-radius: 8px;              /* Bordes redondeados */
+  font-size: 16px;                 /* Tamaño del texto */
+  font-weight: 600;                /* Texto seminegrita */
+  cursor: pointer;                 /* Mano al pasar */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.send:hover {
+  transform: translateY(-2px);     /* Levanta un poco el botón */
+}
+.send:active {
+  transform: translateY(1px);      /* Pulsa ligeramente hacia abajo */
+}
+
+/*Contenedor de visualizacion de puertos*/
+.contenedorPuertos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contenedorPuertos th, .contenedorPuertos td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.contenedorPuertos th {
+  background-color: #007bff;
+  color: #f0f0f0;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.contenedorPuertos tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.contenedorPuertos tr{
+  background-color: #f1f3f5;
+}
+
+.contenedorPuertos td {
+  border-bottom: 1px solid #e9ecef;
+  color: #555;
+}
+
+.subtituloUpDown{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 300px;
+}
+
+/*enviar puertos*/
+.formsSendPorts{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+/*selector*/
+.selector {
+  width: 100px;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #333;
+  appearance: none; /* Elimina el estilo por defecto en algunos navegadores */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  transition: border 0.3s ease;
+}
+.selector:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+/*contenedores*/
+.parametros{
+  background-color: #034334;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+.upDownPorts{
+  background-color: #034334;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+.estadoPuertos{
+  background-color: #034334;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
